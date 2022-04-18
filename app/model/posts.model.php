@@ -33,6 +33,23 @@ class posts
         return $posts;
     }
 
+    public function getComments()
+    {
+        $this->db->query("SELECT 
+                                comments.*,
+                                users.userName 
+                            FROM 
+                                comments 
+                            JOIN 
+                                users 
+                            ON 
+                                users.userId = comments.userId
+                        ");
+
+        $comments = $this->db->fetchAll();
+        return $comments;
+    }
+
 
     public function addPost($data)
     {
@@ -92,5 +109,21 @@ class posts
             return false;
         }
     }
-    
+
+    //comment
+
+    public function addComents($data)
+    {
+        $this->db->query(("INSERT INTO comments (userId,postId, body) VALUES (:userId, :postId, :body) "));
+
+        $this->db->bind(':userId', $data['userId']);
+        $this->db->bind(':body', $data['body']);
+        $this->db->bind(':postId', $data['postId']);
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

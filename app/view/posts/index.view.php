@@ -5,7 +5,7 @@
 
 
 <div class="CC">
-    <a href="http://localhost/my_php/Cinema/post/add">
+    <a href="<?= URLROOT ?>post/add">
         <div class="bg-white container _post postAdd mt-4">Ajouter post</div>
     </a>
 
@@ -33,12 +33,32 @@
 
                 </div>
                 <div class="review row">
-                    <p class="col-12 fw-bolder fs-4 ms-2 mt-3 "><?php echo $post->title ?></p>
+                    <p class="col-12 fw-bolder fs-4 ms-2 mt-3"><?php echo $post->title ?></p>
                     <p class="col-12"><?php echo $post->body ?></p>
                 </div>
                 <div class="row mb-5">
                     <img src="<?php echo URLROOT ?>public/img/post_img/<?php echo $post->img ?>">
                 </div>
+
+                <!-- commentZone -->
+                <div class="aff_comment mt-5 mb-5 p-5">
+                    <?php foreach ($data['comments']  as $comment) : ?>
+                        <?php if ($post->postId == $comment->postId) : ?>
+                            <p><span class="fw-bolder fs-5"><?= $comment->userName ?> : </span> <?= $comment->body ?></p>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+
+                <!-- sendComment -->
+                <form action="<?= URLROOT ?>post/addComment" method="POST">
+                    <div class="">
+
+                        <input type="text" name="comment" class="col-12  form-control-lg">
+                        <input type="hidden" name="postId" value="<?= $post->postId ?>">
+                        <input type="hidden" name="userId" value="<?= $_SESSION['user_id'] ?>">
+                        <button type="submit" name="send" class="col-2 btn btn-primary mb-5">ADD Comment</button>
+                    </div>
+                </form>
 
             </div>
     <?php endforeach;

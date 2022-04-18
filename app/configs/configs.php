@@ -2,7 +2,7 @@
 
 
 define("APPROOT", dirname(dirname(__FILE__)));
-define("URLROOT", 'http://localhost/my_php/Cinema/');
+define("URLROOT", 'http://localhost/my_php/Cin-Master_b4/');
 define("APPNAME", 'CineMaster');
 
 

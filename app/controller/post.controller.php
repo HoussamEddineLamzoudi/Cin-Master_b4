@@ -14,18 +14,19 @@ class post extends controller
 
         //get all posts
         $posts = $this->postModel->getPosts();
+        $comments = $this->postModel->getComments();
 
-        if ($posts) {
+        if ($posts && $comments) {
 
             $data = [
 
-                'posts' => $posts
+                'posts'    => $posts,
+                'comments' => $comments
             ];
-
-
             $this->view("posts/index", $data);
         } else {
-            $this->view("posts/index");
+            // $this->view("posts/index");
+            die("posts fetch err");
         }
     }
 
@@ -89,9 +90,9 @@ class post extends controller
                     'post_id' => $post->postId
                 ];
 
-                
 
-                
+
+
 
 
                 // if ($this->postModel->editPost($data)) {
@@ -147,6 +148,28 @@ class post extends controller
             } else {
                 die("delet err");
             }
+        }
+    }
+
+    // comment
+
+    public function addComment()
+    {
+        if (isset($_SESSION['user_id'])) {
+
+            if (isset($_POST['send'])) {
+                $data = [
+                    'userId' => $_POST['userId'],
+                    'postId' => $_POST['postId'],
+                    'body' => $_POST['comment']
+                ];
+                if ($this->postModel->addComents($data)) {
+
+                    redirect("post/index");
+                }
+            }
+        } else {
+            redirect("user/login");
         }
     }
 }

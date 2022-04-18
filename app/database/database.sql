@@ -4,7 +4,7 @@ CREATE TABLE users(
   lastName varchar(20) not null,
   userName varchar(20) not null unique,
   email varchar(30) not null unique,
-  motPasse varchar(8) not null,
+  motPasse varchar(255) not null,
   img varchar(255)
 );
 CREATE TABLE posts(
