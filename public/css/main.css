@@ -35,6 +35,12 @@ body {
   color: #6699CC;
 }
 
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+  color: #6699CC;
+}
+
 .con_wth {
   width: 50%;
   background-color: white;
@@ -107,5 +113,50 @@ a {
   border: solid #6699CC;
   font-size: 20px;
   text-align: center;
+}
+
+.homeBody {
+  background-color: white;
+  width: 100%;
+}
+
+.landing {
+  background-color: #6699CC;
+  width: 100%;
+  height: 200px;
+}
+
+.landing button {
+  color: #6699CC;
+}
+
+.landing button:hover {
+  color: #6699CC;
+  border: solid 1px #6699CC;
+}
+
+.carSize {
+  height: 7Ovh;
+}
+
+.carSize img {
+  height: 70vh;
+}
+
+.main-title::after {
+  content: '';
+  width: 120px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  position: relative;
+  bottom: -20px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.footer {
+  background-color: #6699CC;
 }
 /*# sourceMappingURL=main.css.map */

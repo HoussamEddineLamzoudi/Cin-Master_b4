@@ -19,6 +19,4 @@
 </div>
 
 
-
-
 <?php include  APPROOT . '/view/includes/footer.php'; ?>

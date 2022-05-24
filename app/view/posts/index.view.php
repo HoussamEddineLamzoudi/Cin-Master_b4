@@ -16,7 +16,7 @@
             <div class="container _post bg-white mt-4 mb-4 p-2 col-8 ">
                 <div class="row col-12">
 
-                    <div class="row pt-4 col-9">
+                    <div class="row pt-4 col-lg-9 col_md-12">
                         <img src="<?= URLROOT ?>public/img/445161.jpg" class="col-6 img_prf ">
                         <div class="row col-6">
                             <h3 class="col-12"><?php echo $post->userName ?></h3>

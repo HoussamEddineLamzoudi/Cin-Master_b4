@@ -46,8 +46,10 @@ class core
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = rtrim($url, '/');
             $url = explode('/', $url);
-
+            
             return $url;
         }
     }
 }
+
+

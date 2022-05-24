@@ -16,7 +16,7 @@ class post extends controller
         $posts = $this->postModel->getPosts();
         $comments = $this->postModel->getComments();
 
-        if ($posts && $comments) {
+        if ($posts) {
 
             $data = [
 
@@ -25,15 +25,14 @@ class post extends controller
             ];
             $this->view("posts/index", $data);
         } else {
-            // $this->view("posts/index");
-            die("posts fetch err");
+            $this->view("posts/index");
+            // die("posts fetch err");
         }
     }
 
 
     public function add()
     {
-
         if (isset($_SESSION['user_id'])) {
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -89,21 +88,9 @@ class post extends controller
                     'img' => $_POST['file'],
                     'post_id' => $post->postId
                 ];
-
-
-
-
-
-
-                // if ($this->postModel->editPost($data)) {
-
-                //     redirect("post/index");
-                // } else {
-                //     die("edit_err");
-                // }
             } else {
 
-                $post = $this->postModel->getPost_byId($id);
+                // $post = $this->postModel->getPost_byId($id);
 
 
                 $data = [

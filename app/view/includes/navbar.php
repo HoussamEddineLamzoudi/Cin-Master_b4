@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ">
                 <li class="nav-item">
-                    <a class="nav-link active disabled" aria-current="page" href="<?= URLROOT; ?>">Home</a>
+                    <a class="nav-link active" aria-current="page" href="<?= URLROOT; ?>pages/home">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contactez nous</a>

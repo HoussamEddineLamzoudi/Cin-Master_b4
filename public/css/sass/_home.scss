@@ -1,0 +1,41 @@
+.homeBody{
+    background-color: white;
+    width: 100%;
+}
+.landing{
+    background-color: $col1;
+    width: 100%;
+    height: 200px;
+}
+.landing button{
+    color: $col1;
+}
+.landing button:hover{
+    color: $col1;
+    border: solid 1px $col1;
+}
+
+.carSize {
+    // height: calc(70vh - 56);
+    // min-height: calc(100vh - 56);    
+    height: 7Ovh;    
+
+}
+.carSize img{
+    // height: calc(70vh - 56);
+    // min-height: calc(100vh - 56);
+    height: 70vh;
+}
+
+.main-title::after{
+    content: '';
+    width: 120px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    position: relative;
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
